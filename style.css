@@ -1,0 +1,198 @@
+/* =========================
+   1. GLOBAL STYLES
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #15141c;
+    color: #f1eff8;
+}
+
+/* =========================
+   2. HEADER
+========================= */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #211b35, #15141c);
+    border-bottom: 1px solid #302642;
+}
+
+.header h1 {
+    margin: 0 0 12px;
+    font-size: 38px;
+    color: #c4a1ff;
+    letter-spacing: 1px;
+}
+
+.header p {
+    margin: 0;
+    color: #b8b2c9;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* =========================
+   3. GALLERY SECTION
+========================= */
+.gallery-section {
+    padding: 35px 20px 50px;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    margin: 0 0 30px;
+    font-size: 28px;
+    color: #e3d5ff;
+}
+
+/* =========================
+   4. GALLERY GRID
+========================= */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+/* =========================
+   5. IMAGE CARDS
+========================= */
+.gallery-item {
+    position: relative;
+    background-color: #211e2b;
+    border: 1px solid #393047;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* =========================
+   6. IMAGE CONTAINER
+========================= */
+.image-container {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    background-color: #191720;
+
+    transition: height 0.6s ease;
+}
+
+/* =========================
+   7. GALLERY IMAGES
+========================= */
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================
+   8. HOVER EFFECTS
+========================= */
+.gallery-item:hover {
+    z-index: 10;
+    overflow: visible;
+    transform: translateY(-6px) scale(1.02);
+    border-color: #a879ff;
+    box-shadow: 12px 12px 30px rgba(150, 90, 255, 0.7);
+    border-radius: 16px;
+}
+
+.gallery-item:hover .image-container {
+    height: 400px;
+}
+
+.gallery-item:hover img {
+    object-fit: contain;
+    background-color: #191720;
+}
+
+/* =========================
+   9. IMAGE TITLES
+========================= */
+.gallery-item h3 {
+    margin: 0;
+    padding: 16px;
+    font-size: 18px;
+    color: #e5d8ff;
+    background-color: #211e2b;
+    border-top: 1px solid #393047;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.gallery-item:hover h3 {
+    color: #c4a1ff;
+    background-color: #292337;
+}
+
+/* =========================
+   10. TABLET RESPONSIVENESS
+========================= */
+@media (max-width: 768px) {
+    .header {
+        padding: 40px 15px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .gallery {
+        gap: 18px;
+    }
+
+    .image-container {
+        height: 220px;
+    }
+
+    .gallery-item:hover .image-container {
+        height: 320px;
+    }
+}
+
+/* =========================
+   11. MOBILE RESPONSIVENESS
+========================= */
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-section {
+        padding: 25px 15px 40px;
+    }
+
+    .gallery-section h2 {
+        font-size: 24px;
+    }
+
+    .image-container {
+        height: 250px;
+    }
+
+    .gallery-item:hover .image-container {
+        height: 350px;
+    }
+
+    .header h1 {
+        font-size: 28px;
+    }
+}
